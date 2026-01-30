@@ -58,7 +58,7 @@ const HomePage = () => {
             }
 
             // 1. Fetch Local (Fast)
-            const localRes = await fetch(`https://isshopopen.onrender.com/shops?${queryParams.toString()}`);
+            const localRes = await fetch(`https://isshopopen.onrender.com/api/shops?${queryParams.toString()}`);
             const communityShops = localRes.ok ? await localRes.json() : [];
 
             // 2. Fetch External with a Deadline (Only if not in "Show All" mode which is local-focused basically, or we can allow global too?)
@@ -69,7 +69,7 @@ const HomePage = () => {
             if (!showAll && userLocation) {
                 try {
                     const externalRes = await fetch(
-                        `https://isshopopen.onrender.com/external/google?lat=${userLocation.lat}&lng=${userLocation.lng}`,
+                        `https://isshopopen.onrender.com/api/external/google?lat=${userLocation.lat}&lng=${userLocation.lng}`,
                         { signal: controller.signal }
                     );
                     if (externalRes.ok) globalShops = await externalRes.json();
