@@ -1,0 +1,21 @@
+{
+    "version": 2,
+    "rewrites": [
+        {
+            "source": "/api/(.*)",
+            "destination": "/api/index.js"
+        },
+        {
+            "source": "/assets/(.*)",
+            "destination": "/client/dist/assets/$1"
+        },
+        {
+            "source": "/(.*)\\.(png|jpg|jpeg|gif|svg|ico|json|css|js)",
+            "destination": "/client/dist/$1.$2"
+        },
+        {
+            "source": "/(.*)",
+            "destination": "/client/dist/index.html"
+        }
+    ]
+}

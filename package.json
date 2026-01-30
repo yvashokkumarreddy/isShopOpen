@@ -1,0 +1,18 @@
+{
+  "name": "open-now-root",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "client",
+    "api"
+  ],
+  "scripts": {
+    "build": "cd client && npm install && npm run build",
+    "postinstall": "cd api && npm install",
+    "client": "cd client && npm run dev",
+    "api": "cd api && npm run dev"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}
