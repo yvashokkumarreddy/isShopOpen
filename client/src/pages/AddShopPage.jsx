@@ -120,7 +120,7 @@ const AddShopPage = () => {
         };
 
         try {
-            const res = await fetch('${BASE_URL}/shops', {
+            const res = await fetch('https://isshopopen.onrender.com/shops', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(submissionData)
