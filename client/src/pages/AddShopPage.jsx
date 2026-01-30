@@ -108,8 +108,6 @@ const AddShopPage = () => {
         const submissionData = {
             name: formData.name,
             category: formData.category,
-            name: formData.name,
-            category: formData.category,
             location: formData.location || "Custom Location",
             status: formData.status,
             openTime: formData.openTime,

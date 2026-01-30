@@ -7,8 +7,7 @@
     "api"
   ],
   "scripts": {
-    "build": "cd client && npm install && npm run build",
-    "postinstall": "cd api && npm install",
+    "build": "cd client && npm run build",
     "client": "cd client && npm run dev",
     "api": "cd api && npm run dev"
   },
