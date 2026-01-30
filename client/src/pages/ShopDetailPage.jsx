@@ -25,7 +25,7 @@ const ShopDetailPage = () => {
     const fetchShop = async () => {
         try {
             setLoading(true);
-            const res = await fetch(`https://isshopopen.onrender.com/shops/${id}`);
+            const res = await fetch(`https://isshopopen.onrender.com/api/shops/${id}`);
             if (!res.ok) {
                 if (res.status === 404) throw new Error('Shop not found in database');
                 throw new Error('Failed to fetch details');
@@ -47,7 +47,7 @@ const ShopDetailPage = () => {
         setShop({ ...shop, status, lastStatusUpdate: new Date().toISOString(), lastReportedBy: 'COMMUNITY' });
 
         try {
-            const res = await fetch(`https://isshopopen.onrender.com/shops/${id}/status`, {
+            const res = await fetch(`https://isshopopen.onrender.com/api/shops/${id}/status`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ status, source: 'COMMUNITY' })
