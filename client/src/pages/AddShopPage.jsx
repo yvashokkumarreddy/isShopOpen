@@ -4,6 +4,7 @@ import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { ArrowLeft, MapPin, Search, LocateFixed, Plus } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+const BASE_URL = import.meta.env.BASE_URL
 
 // Leaflet Icon Fix
 import markerIcon from 'leaflet/dist/images/marker-icon.png';
@@ -119,7 +120,7 @@ const AddShopPage = () => {
         };
 
         try {
-            const res = await fetch('/api/shops', {
+            const res = await fetch('${BASE_URL}/shops', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(submissionData)
