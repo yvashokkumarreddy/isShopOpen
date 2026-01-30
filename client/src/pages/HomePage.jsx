@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { Search, MapPin, Navigation, Store, AlertCircle, Globe, RefreshCw } from 'lucide-react';
 import ShopCard from '../components/ShopCard';
 import homeBanner from '../assets/home_banner.png';
-
+const BASE_URL = import.meta.env.BASE_URL
 const HomePage = () => {
     const [shops, setShops] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -44,7 +44,7 @@ const HomePage = () => {
 
         try {
             setLoading(true);
-            const BASE_URL = '/api';
+            
 
             const queryParams = new URLSearchParams();
             if (searchTerm) queryParams.append('search', searchTerm);
