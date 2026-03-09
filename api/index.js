@@ -10,7 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 // Improved MongoDB Connection Logic
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/shopStatusDB';
+const MONGODB_URI = ' mongodb+srv://akreddy8179:akreddy0000@blinkgo.f6jlm.mongodb.net/blinkgodb?retryWrites=true&w=majority&appName=BlinkGo';
 
 mongoose.connect(MONGODB_URI)
     .then(() => console.log('✅ Connected to MongoDB'))
